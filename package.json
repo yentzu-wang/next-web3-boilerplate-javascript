@@ -1,20 +1,44 @@
 {
-  "name": "next-web3-template-javascript",
+  "name": "next-web3-boilerplate-javascript",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|json)\"",
+    "compile-contract-types": "typechain --target ethers-v5 --out-dir './contracts/types' './contracts/*.json'",
+    "postinstall": "yarn compile-contract-types"
   },
   "dependencies": {
+    "@ethersproject/bignumber": "^5.6.0",
+    "@ethersproject/contracts": "^5.6.0",
+    "@ethersproject/providers": "^5.6.5",
+    "@ethersproject/units": "^5.6.0",
+    "@ethersproject/wallet": "^5.6.0",
+    "@metamask/detect-provider": "^1.2.0",
+    "@metamask/onboarding": "^1.0.1",
+    "@web3-react/core": "^6.1.9",
+    "@web3-react/injected-connector": "^6.0.7",
     "next": "12.1.6",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "swr": "^1.3.0"
   },
   "devDependencies": {
-    "eslint": "8.15.0",
-    "eslint-config-next": "12.1.6"
+    "@typechain/ethers-v5": "^10.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-next": "12.1.6",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "ethers": "^5.6.5",
+    "prettier": "^2.6.2",
+    "typechain": "^8.0.0"
   }
 }
